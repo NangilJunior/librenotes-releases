@@ -1,0 +1,37 @@
+title: "[Ideia] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por ajudar a melhorar o libreNotes! Antes de enviar, veja se alguém já sugeriu algo parecido e, se sim, vote com 👍 lá.
+        Thanks for helping improve libreNotes! Please check whether a similar idea already exists and upvote it with 👍 instead. English is welcome.
+  - type: textarea
+    id: problem
+    attributes:
+      label: O que você quer fazer? / What are you trying to do?
+      description: Conte a situação ou o problema. / Describe the situation or problem.
+      placeholder: "Ex.: quero anotar aulas gravadas e marcar o minuto de cada anotação."
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Qual recurso resolveria? / What feature would help?
+      description: Como você imagina que funcionaria. / How you picture it working.
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: Como você usa o libreNotes? / How do you use libreNotes?
+      multiple: true
+      options:
+        - Mouse e teclado / Mouse and keyboard
+        - Caneta / Stylus
+        - Tela touch / Touchscreen
+  - type: textarea
+    id: extra
+    attributes:
+      label: Algo mais? / Anything else?
+      description: Imagens, exemplos de outros apps, links. / Screenshots, examples from other apps, links.
