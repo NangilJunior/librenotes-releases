@@ -7,7 +7,7 @@
 <meta name="description" content="Anotações com cara de caderno desenhado à mão: quadro infinito, canetas com pressão, pastas e 11 tipos de papel. Gratuito para Linux.">
 <meta property="og:title" content="libreNotes: anotações desenhadas à mão">
 <meta property="og:description" content="Quadro infinito, canetas com pressão, pastas e 11 tipos de papel. Gratuito para Linux.">
-<meta property="og:image" content="https://nangiljunior.github.io/librenotes-releases/assets/img/editor.png">
+<meta property="og:image" content="https://nangiljunior.github.io/librenotes-releases/assets/img/og.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
 <style>
@@ -30,6 +30,9 @@
   --ui: "Patrick Hand", "Comic Neue", system-ui, sans-serif;
   --sketch: 255px 15px 225px 15px / 15px 225px 15px 255px;
   --sketch-2: 15px 255px 15px 225px / 225px 15px 255px 15px;
+  /* Capturas: tremor leve, sem comer os cantos da janela. */
+  --frame: 14px 22px 12px 26px / 22px 12px 26px 14px;
+  --frame-2: 24px 12px 22px 14px / 12px 24px 14px 22px;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -58,8 +61,8 @@ body {
   overflow-x: hidden;
 }
 a { color: inherit; }
-img { max-width: 100%; display: block; }
-.wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
+img { max-width: 100%; height: auto; display: block; }
+.wrap { width: min(1200px, 100% - 32px); margin-inline: auto; }
 
 /* ---------- cabeçalho */
 header { padding: 18px 0; }
@@ -94,13 +97,13 @@ nav a:hover { color: var(--ink); text-decoration: underline wavy var(--accent); 
 
 /* ---------- hero */
 .hero { padding: 40px 0 70px; }
-.hero .wrap { display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px; align-items: center; }
-.hero h1 { font-family: var(--hand); font-weight: 700; font-size: clamp(46px, 6.4vw, 78px); line-height: 1; margin: 0 0 20px; }
+.hero .wrap { display: grid; grid-template-columns: 0.85fr 1.35fr; gap: 44px; align-items: center; }
+.hero h1 { font-family: var(--hand); font-weight: 700; font-size: clamp(44px, 5.3vw, 70px); line-height: 1; margin: 0 0 20px; }
 .hero p.lead { font-size: 22px; color: var(--ink-soft); margin: 0 0 30px; max-width: 30em; }
 .cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
 .meta { margin-top: 16px; font-size: 16px; color: var(--ink-soft); }
 .shot { position: relative; }
-.shot img { border: 2.5px solid var(--ink); border-radius: var(--sketch-2); box-shadow: 6px 8px 0 var(--shadow); transform: rotate(1.2deg); background: var(--paper); }
+.shot img { border: 2.5px solid var(--ink); border-radius: var(--frame); box-shadow: 6px 8px 0 var(--shadow); transform: rotate(1.2deg); background: var(--paper); }
 .sticky-note {
   position: absolute; left: -26px; bottom: -30px;
   background: var(--sticky); color: var(--ink);
@@ -123,10 +126,10 @@ h2 { font-family: var(--hand); font-weight: 700; font-size: clamp(40px, 5vw, 56p
 .feature h3 { font-family: var(--hand); font-size: 32px; line-height: 1.1; margin: 0 0 6px; }
 .feature p { margin: 0; color: var(--ink-soft); font-size: 18px; }
 
-.gallery { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: start; }
+.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
 .gallery figure { margin: 0; }
-.gallery img { border: 2.5px solid var(--ink); border-radius: var(--sketch); box-shadow: 5px 6px 0 var(--shadow); }
-.gallery figure:nth-child(2) img { border-radius: var(--sketch-2); }
+.gallery img { border: 2.5px solid var(--ink); border-radius: var(--frame); box-shadow: 5px 6px 0 var(--shadow); }
+.gallery figure:nth-child(2) img { border-radius: var(--frame-2); }
 .gallery figcaption { font-family: var(--hand); font-size: 26px; margin-top: 8px; text-align: center; }
 .gallery .stack { display: grid; gap: 28px; }
 
@@ -185,6 +188,7 @@ footer .heart { color: #e03131; }
   .support { padding: 30px 20px; }
   .btc { grid-template-columns: 1fr; }
   .qr { width: 150px; }
+  .sticky-note { bottom: -44px; right: 4px; font-size: 19px; padding: 8px 12px; max-width: 160px; }
   section { padding: 50px 0; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -222,7 +226,7 @@ footer .heart { color: #e03131; }
         <p class="meta">Versão <span id="version">0.1.1</span> · Linux x86_64 · Windows e macOS ainda não</p>
       </div>
       <div class="shot">
-        <img src="assets/img/editor.png" width="1024" height="768" alt="Editor do libreNotes com um mapa mental desenhado à mão e o painel de canetas aberto">
+        <img src="assets/img/editor.webp" width="2560" height="1440" alt="Editor do libreNotes com um mapa mental desenhado à mão e o painel de canetas aberto">
         <div class="sticky-note sketchy">Feito para caneta, dedo e mouse!</div>
       </div>
     </div>
@@ -273,13 +277,13 @@ footer .heart { color: #e03131; }
       <p class="sub">Tema claro, papel e lousa no escuro, e uma tela inicial que parece uma estante de cadernos.</p>
       <div class="gallery">
         <figure>
-          <img src="assets/img/home.png" width="1024" height="768" loading="lazy" alt="Tela inicial com as notas em grade, pastas coloridas na barra lateral">
+          <img src="assets/img/home.webp" width="2560" height="1440" loading="lazy" alt="Tela inicial com as notas em grade, pastas coloridas na barra lateral">
           <figcaption>suas notas, como cadernos na estante</figcaption>
         </figure>
         <div class="stack">
           <figure>
-            <img src="assets/img/editor-dark.png" width="1024" height="768" loading="lazy" alt="Editor no tema escuro">
-            <figcaption>modo escuro de verdade</figcaption>
+            <img src="assets/img/editor-dark.webp" width="2560" height="1440" loading="lazy" alt="Editor no tema escuro, com o mapa mental em lousa">
+            <figcaption>e um modo escuro de verdade</figcaption>
           </figure>
         </div>
       </div>
